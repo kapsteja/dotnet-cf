@@ -1,0 +1,29 @@
+// Add steps as necessary for accessing the software, post-configuration, and testing. Don’t include full usage instructions for your software, but add links to your product documentation for that information.
+//Should any sections not be applicable, remove them
+
+== Post-deployment steps
+To test your pipeline, do the following:
+
+. Make a code change to your configured source repository, commit, and push the change.
+. Open the CodePipeline console at https://console.aws.amazon.com/codepipeline/.
+. Choose your pipeline from the list.
+. Watch the pipeline progress through its stages. Your pipeline should complete and your Amazon ECS service runs the Docker image that was created from your code change.
+. Open the https://console.aws.amazon.com/ecs/[Amazon ECS console^].
+. Navigate to the Amazon ECS task updated by the pipeline and expand the container details.
+. Open the URL for the application. Confirm that your application sample is deployed.
+
+== Additional information
+
+=== Best practices
+* https://docs.aws.amazon.com/codepipeline/latest/userguide/best-practices.html[CodePipeline best practices and use cases^]
+* https://docs.aws.amazon.com/whitepapers/latest/practicing-continuous-integration-continuous-delivery/welcome.html?did=wp_card&trk=wp_card[Practicing Continuous Integration and Continuous Delivery on AWS^]
+* https://docs.aws.amazon.com/whitepapers/latest/develop-deploy-dotnet-apps-on-aws/develop-deploy-dotnet-apps-on-aws.html[Developing and Deploying .NET Applications on AWS^]
+
+=== AWS services
+* https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html[AWS CodePipeline^] 
+* https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html[AWS CodeBuild^]
+* https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html[AWS CodeDeploy^]
+* https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html[AWS Systems Manager^]
+* https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html[Amazon ECS^]
+* https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html[Amazon ECR^]
+* https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html[Amazon S3^]

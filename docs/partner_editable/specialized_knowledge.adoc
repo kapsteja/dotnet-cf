@@ -1,0 +1,6 @@
+// Replace the content in <>
+// For example: “familiarity with basic concepts in networking, database operations, and data encryption” or “familiarity with <software>.”
+// Include links if helpful. 
+// You don't need to list AWS services or point to general info about AWS; the boilerplate already covers this.
+
+This Quick Start assumes familiarity with Microsoft technologies, specifically .NET. Additional knowledge of Docker, and the link:#aws_services[services] used as part of this Quick Start will help you tailor the deployment for your use case.

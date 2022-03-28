@@ -1,0 +1,44 @@
+// Add any tips or answers to anticipated questions.
+
+== FAQ
+
+*Q.* I encountered a *CREATE_FAILED* error when I launched the Quick Start.
+
+*A.* If AWS CloudFormation fails to create the stack, relaunch the template with *Rollback on failure* set to *Disabled*. This setting is under *Advanced* in the AWS CloudFormation console on the *Configure stack options* page. With this setting, the stack’s state is retained, and the instance keeps running so that you can troubleshoot the issue. (For Windows, look at the log files in `%ProgramFiles%\Amazon\EC2ConfigService` and `C:\cfn\log`.)
+// Customize this answer if needed. For example, if you’re deploying on Linux instances, either provide the location for log files on Linux or omit the final sentence. If the Quick Start has no EC2 instances, revise accordingly (something like "and the assets keep running").
+
+WARNING: When you set *Rollback on failure* to *Disabled*, you continue to incur AWS charges for this stack. Delete the stack when you finish troubleshooting.
+
+For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html[Troubleshooting AWS CloudFormation^].
+
+*Q.* I encountered a size-limitation error when I deployed the AWS CloudFormation templates.
+
+*A.* Launch the Quick Start templates from the links in this guide or from another S3 bucket. If you deploy the templates from a local copy on your computer or from a location other than an S3 bucket, you might encounter template-size limitations. For more information, see http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html[AWS CloudFormation quotas^].
+
+
+== Troubleshooting
+
+=== CI/CD pipeline fails in build stage
+Select the details link in the build stage. Use the Build logs tab to view the log output from the stage. 
+
+While the error message returned from the SSM document execution is logged, this may not provide enough information to diagnose the problem. If this is the case, to view the SSM output for each step, follow these steps:
+
+* Look for the log entry that begins with "Running execution". The log entry will look similar to <<logentry>>. 
+
+[#logentry]
+.Running execution log entry
+image::../images/ssm-execution-id.png[SSM Execution ID]
+
+* Navigate to the https://console.aws.amazon.com/systems-manager/automation?region=us-east-1[AWS Systems Manager Automation console] and select the automation execution matching the ID in the log entry.
+* In the *Executed Steps* section, select the step that failed.
+* In the *Failure Details* section, find the exception message.
+
+=== CI/CD pipeline fails in deploy stage
+Typically a pipeline failure in the deploy stage is due to a container instance not meeting all of the task definition's requirements. To view the details as to why the task could not be updated, follow these steps.
+
+* Select the details link in the deploy stage. This will navigate you to the Amazon ECS Service *Deployments* tab.
+* Select the *Events* tab of the ECS Service to view the log. Use the information in the *Message* column to diagnose the problem, as shown in <<taskfailure>>.
+
+[#taskfailure]
+.Diagnosing a task failure
+image::../images/task-update-failure.png[Task Update Failure]

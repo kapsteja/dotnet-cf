@@ -1,0 +1,29 @@
+This Quick Start supports the following Regions:
+
+|===
+|Code | Name | Opt-in Status
+
+|us-east-1 | US East (N. Virginia) | Not required
+|us-east-2 | US East (Ohio) | Not required
+|us-west-1 | US West (N. California) | Not required
+|us-west-2 | US West (Oregon) | Not required
+|ca-central-1 | Canada (Central) | Not required
+|eu-west-1 | Europe (Ireland) | Not required
+|eu-west-2 | Europe (London) | Not required
+|eu-west-3 | Europe (Paris) | Not required
+|eu-central-1 | Europe (Frankfurt) | Not required
+|ap-south-1 | Asia Pacific (Mumbai) | Not required
+|ap-southeast-1 | Asia Pacific (Singapore) | Not required
+|ap-southeast-2 | Asia Pacific (Sydney) | Not required
+|ap-northeast-1 | Asia Pacific (Tokyo) | Not required
+|ap-northeast-2 | Asia Pacific (Seoul) | Not required
+|===
+
+The list of Regions that support https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html[Amazon Elastic File System (Amazon EFS)] is updated periodically. To check if your preferred Region has been added, see https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/[Regional Product Services].
+
+[WARNING]
+====
+This Quick Start is not supported in AWS GovCloud for production.
+====
+
+//Full list: https://docs.aws.amazon.com/general/latest/gr/rande.html
